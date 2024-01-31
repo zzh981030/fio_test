@@ -12,10 +12,10 @@ RW=(randwrite randread write read)
 BS=(4k 8k 16k 32k 64k 128k 1M)
 
 NUMJOBS=$1   ##读取输入的第一个字符
-DIRECT=1
-SIZE="20g"
+DIRECT=1     ##跳过硬盘缓存
+SIZE="960g"   ##一般为硬盘数量的整数倍
 IODEPTH=$2    ##读取输入的第二个字符
-RUNTIME=30
+RUNTIME=30    ##运行时间
 
 for rw_name in ${RW[@]}
 do
